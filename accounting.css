@@ -1,0 +1,370 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Lexend Deca', sans-serif;
+    background-color: #fff;
+}
+.stocks {
+    width: 100%;
+    padding: 10px;
+}
+
+/* Header */
+.header {
+    background-color: #F0B135;
+    padding: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+.nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 10px;
+    border-radius: 15px;
+    z-index: 10;
+}
+.nav-left {
+    display: flex;
+    align-items: center;
+}
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+.bell-icon {
+    width: 30px;
+    height: 30px;
+}
+/* NavBar */
+.nav-right {
+    display: flex;
+    list-style-type: none;
+}
+.nav-right li {
+    margin: 0 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    position: relative;
+}
+.nav-right li.active::after {
+    content: "";
+    position: absolute;
+    bottom: -5px; /* Slightly below the text */
+    left: 0;
+    right: 0;
+    height: 4px; /* Height of the underline */
+    background-color: #F0B135;
+    border-radius: 2px;
+}
+
+/* Filter Section */
+.filter-section {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #F0B135;
+    border-bottom-left-radius: 15px;
+    border-bottom-right-radius: 15px;
+    gap: 10px;
+}
+
+/* Filter buttons with uniform min-width */
+.filter-section button {
+    background-color: #F3CC6C;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 15px;
+    cursor: pointer;
+    color: black;
+    font-size: 16px;
+    min-width: 150px;
+}
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+    position: relative;
+}
+
+.search-bar input {
+    padding: 10px 10px 10px 40px;
+    border-radius: 15px;
+    border: 0px;
+    font-size: 16px;
+    background-color: #F3CC6C;
+}
+.search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    align-items: center;
+    width: calc(100% - 15px);
+    height: calc(100% - 15px);
+}
+.search-icon img {
+    width: 16px;
+    height: 16px;
+}
+
+/* Accounting Section */
+.accounting-section {
+    width: 100%;
+    margin: 10px auto;
+    max-width: 100%;
+}
+.account-row {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr; /* Adjust the column sizes as needed */
+    align-items: center;
+    gap: 20px;
+    padding: 15px 20px;
+    width: 100%;
+    border-radius: 15px;
+}
+.account-row:hover {
+    background-color: #F3CC6C;
+}
+.profile {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+.status {
+    text-align: left;
+}
+.profile-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: #F0B135;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.profile-details {
+    display: flex;
+    flex-direction: column;
+}
+.name {
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+.category {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 14px;
+    color: #777;
+}
+/* Status section with dynamic colors */
+.status .paid {
+    color: green;
+    font-weight: bold;
+}
+.status .pending {
+    color: blue;
+    font-weight: bold;
+}
+.status .unpaid {
+    color: red;
+    font-weight: bold;
+}
+.amount {
+    font-family: 'Lexend Deca', sans-serif;
+    font-size: 16px;
+    color: #333;
+}
+.actions {
+    display: flex;
+    align-items: center;
+    justify-self: end;
+    gap: 10px;
+}
+.edit-btn, .delete-btn {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    font-size: 30px;
+    color: #F0B135;
+    line-height: 1; /* Ensures the button's text or icon is vertically centered */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: color 0.3s ease;
+}
+.edit-btn:hover, .delete-btn:hover {
+    color: black;
+}
+
+/* Add button styles */
+.add-btn {
+    position: fixed;
+    bottom: 20px; 
+    right: 20px;  
+    background-color: #F0B135;
+    width: 60px;  
+    height: 60px;
+    border-radius: 50%; 
+    border: none;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1); 
+    cursor: pointer;
+    font-size: 30px; 
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center; 
+    z-index: 1000; 
+    text-align: center;
+}
+.add-btn:focus {
+    outline: none; 
+}
+
+/* Modal */
+.modal {
+    display: none;
+    justify-content: center; 
+    align-items: center; 
+    position: fixed;
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(213, 174, 78, 0.4); 
+    transform: translate(-50%, -50%);
+}
+.modal-content {
+    background-color: #F0B135;
+    padding: 30px;
+    margin: 0 auto; 
+    border: 1px solid #d11b1b;
+    width: 50%; 
+    height: 100%; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 15px;
+    overflow-y: auto;
+}
+.modal-content {
+    background-color: #F0B135;
+    padding: 15px;
+    margin: 0 auto; 
+    border: 1px solid #d11b1b;
+    width: 50%; 
+    height: 100%; 
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    overflow-y: auto;
+}
+.modal-header {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+}
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+#editForm input[type="text"], 
+#editForm input[type="number"],
+#addForm input[type="text"], 
+#addForm input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    background-color: #F3CC6C;
+    border: 1px solid #d11b1b;
+}
+/* #editForm input[type="file"] {
+    padding: 5px;
+    cursor: pointer;
+    margin-bottom: 15px;
+}
+#editForm input[type="file"]::file-selector-button {
+    background-color: #d11b1b;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+#editForm input[type="file"]::file-selector-button:hover {
+    background-color: #F3CC6C;
+    color: black;
+} */
+select {
+    width: 100%;
+    padding: 10px;
+    background-color: #F3CC6C;
+    border: 1px solid #d11b1b;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+    box-sizing: border-box;
+    border-radius: 5px;
+}
+select:focus {
+    background-color: #F0B135;
+    border: 1px solid #d11b1b;
+}
+.modal-button {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    cursor: pointer;
+    background-color: #d11b1b;
+    color: #fff;
+    border: none;
+    font-size: 16px;
+    
+}
+.modal-button:hover {
+    background-color: #F3CC6C;
+    color: black;
+}
+.close {
+    color: red;
+    font-size: 32px;
+    font-weight: bold;
+}
+.close:hover,
+.close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f3cc6c;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #d11b1b;
+    border-radius: 10px;
+    border: 2px solid #f3cc6c;
+}
+.editForm{
+display: block;
+}

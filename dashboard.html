@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Inventrack</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="header.css">
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Lexend Deca Regular -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400&display=swap" rel="stylesheet">
+    <!-- Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400&display=swap" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <div class="white-cover"></div>
+    <div class="dashboard">
+        <header class="header">
+            <div class="nav">
+                <div class="nav-left">
+                    <img src="assets/logo-gold.png" alt="Logo" class="logo">
+                    <img src="assets/icon-bell.png" alt="Bell" class="bell-icon">
+                </div>
+                <ul class="nav-right">
+                    <li class="active">
+                        <a href="dashboard.html" class="no-style">Dashboard</a>
+                    </li>
+                    <li>
+                        <a href="stocks.html" class="no-style">Stocks</a>
+                    </li>
+                    <li>
+                        <a href="accounting.html" class="no-style">Accounting</a>
+                    </li>
+                    <li>
+                        <a href="settings.html" class="no-style">Settings</a>
+                    </li>
+                </ul>
+            </div>
+        </header>        
+        <section class="top-section">
+            <!-- Left -->
+            <div class="shop-info">
+                <img src="assets/background.png" alt="Portrait" class="portrait">
+                <div class="shop-details">
+                    <h2 class="shop-title">Shop Name</h2>
+                    <p class="owner-name">Owner Name</p>
+                </div>
+            </div>
+            <!-- Middle -->
+            <div class="inventory-status">
+                <div class="status-text good">
+                    <img src="assets/icon-status.png" alt="Icon" class="status-icon">
+                    <h1>Bad</h1>
+                    <p>Overall Inventory</p>
+                </div>
+            </div>
+            <!-- Right -->
+            <div class="wallet">
+                <p>Your Wallet</p>
+                <p class="wallet-amount" id="walletAmount">₱0.00</p>
+            </div>
+        </section>
+        <section class="main-section">
+            <!-- Top Left -->
+            <div class="stock-overview">
+                <h3>Stock Overview</h3>
+                <div class="stock-items-container" id="stockItemsContainer">
+                    <!-- Stock items will be populated here -->
+                </div>
+            </div>
+            <!-- Top Middle -->
+            <div class="transactions">
+                <h3>Transactions</h3>
+                <div class="transaction-items-container" id="transaction-items-container">
+                    <!-- Transaction items will be populated here -->
+                </div>
+            </div>
+            <!-- Top Right -->
+            <div class="stock-level">
+                <h3>Stock Level</h3>
+                <div class="bar-graph">
+                    <canvas id="myChart" width="400" height="350"></canvas>
+                </div>
+            </div>
+        </section>
+    <!-- Bottom Yellow Bar -->
+    <div class="bottom-bar"></div>
+    </div>
+</body>
+</html>
